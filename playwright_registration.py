@@ -19,6 +19,4 @@ with sync_playwright() as playwright:
     registration_button.click()
 
     title_display = page.get_by_test_id('dashboard-toolbar-title-text')
-    expect(title_display).to_be_visible()
-
-    page.wait_for_timeout(5000)
+    expect(title_display).to_have_text('Dashboard')
